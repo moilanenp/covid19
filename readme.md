@@ -16,6 +16,7 @@ from pandas.io.json import json_normalize
 ## Datojen lataus
 
 Ensiksi haetaan HS.Fi:n THL:n rajapinnasta hakema data tarkempi kuvaus löytyy täältä: https://github.com/HS-Datadesk/koronavirus-avoindata
+Tämän olisi voinut hakea staattisena tiedostona, mutta koska lähde päivittyy skriptillä voi tuoreuttaa datan joko tarvittaessa tai ajastetusti.
 
 
 ```python
@@ -32,10 +33,7 @@ confirmed=stat['confirmed']
 confirmed_cases=json_normalize(confirmed)
 confirmed_cases.to_excel('thl-confirmed.xlsx')
 ```
-
-    C:\Users\pasim\anaconda3\lib\site-packages\urllib3\connectionpool.py:1004: InsecureRequestWarning: Unverified HTTPS request is being made to host 'w3qa5ydb4l.execute-api.eu-west-1.amazonaws.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
-      InsecureRequestWarning,
-    
+ 
 
 Sairaanhoitopiirit löytyvät Excelinä osoitteesta: https://www.kuntaliitto.fi/sosiaali-ja-terveysasiat/sairaanhoitopiirien-jasenkunnat
 
