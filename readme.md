@@ -24,7 +24,7 @@ from pandas.io.json import json_normalize
 
 ```
 
-#### Datojen lataus
+#### Datan lataus
 
 Haetaan HS.Fi:n THL:n rajapinnasta hakema data tarkempi kuvaus löytyy täältä: https://github.com/HS-Datadesk/koronavirus-avoindata
 Tämän olisi voinut hakea staattisena tiedostona, mutta koska lähde päivittyy skriptillä voi tuoreuttaa datan joko tarvittaessa tai ajastetusti.
@@ -45,7 +45,7 @@ confirmed_cases=json_normalize(confirmed)
 confirmed_cases.to_excel('thl-confirmed.xlsx')
 ```
  
-
+#### Excel -lähteet
 Sairaanhoitopiirit löytyvät Excelinä osoitteesta: https://www.kuntaliitto.fi/sosiaali-ja-terveysasiat/sairaanhoitopiirien-jasenkunnat
 
 Kuntaliiton sivuilta löytyvät myös kuntien asukasluvut: https://www.kuntaliitto.fi/sites/default/files/media/file/Kuntajaot%20ja%20asukasluvut%20kunnittain%202000-2020_2.xls
