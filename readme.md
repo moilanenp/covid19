@@ -1,8 +1,19 @@
-# THL Covid-19 data
+# THL Covid-19 data ja Power BI
 
-Tämä on skripti, joka hakee tautitapaukset sairaanhoitopiireittäin THL:n rajapinnasta ja siirtää sen pandas dataframeen
+## Tutustuminen Power BI:hin
+Tein pienen tutustumiskierroksen Power BI:hin mallintamalla viime aikoina paljon esillä ollutta dataa Covid-19:sta. Hain malliin dataa muutamasta eri paikasta. Datan oli JSON ja Excel muotoista, Power BI:hin toin kaiken joko Excel -formaatissa tai csv:nä. 
 
-## Ladataan kirjastot
+Taulukosta sairaanhoitopiiriä klikkaamalla saa suodatettua dataa. Tämä toimii kohtuullisen hyvin. 
+
+Parannettavaa olisi paljonkin. Karttakuvaan en saanut rajattua sairaanhoitopiirejä, vaan se näyttää vain maakunnat. Kuntien täyttö ei Bingin karttoihin toiminut, se värjäsi vain pienen osan kunnan alueesta.
+
+Viivagraafiin en saanut järkevästi toimiviksi tasoiksi kuin vuoden ja kuukauden. Kalenteritaulu olisi seuraava tehtävä asia.
+
+### Lähdetiedostot
+
+Ensimmäisenä on lyhyt Python skripti, joka hakee HS:n datat, sen jälkeen löytyvät linkit Excel -lähteisiin.
+
+#### Ladataan kirjastot
 
 
 ```python
@@ -13,9 +24,9 @@ from pandas.io.json import json_normalize
 
 ```
 
-## Datojen lataus
+#### Datojen lataus
 
-Ensiksi haetaan HS.Fi:n THL:n rajapinnasta hakema data tarkempi kuvaus löytyy täältä: https://github.com/HS-Datadesk/koronavirus-avoindata
+Haetaan HS.Fi:n THL:n rajapinnasta hakema data tarkempi kuvaus löytyy täältä: https://github.com/HS-Datadesk/koronavirus-avoindata
 Tämän olisi voinut hakea staattisena tiedostona, mutta koska lähde päivittyy skriptillä voi tuoreuttaa datan joko tarvittaessa tai ajastetusti.
 
 
